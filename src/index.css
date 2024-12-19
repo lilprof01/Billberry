@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, html{
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.toggle{
+  border-radius: 50%;
+}
+
+@keyframes appear{
+  0%{
+    opacity: 0;
+    scale: 0.5;
+  }
+  100%{
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.appear{
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 35%;
+}
+
+@keyframes appear-left{
+  0%{
+    transform: translateX(-50%);
+    scale: 0.5;
+  }
+  100%{
+    transform: translateX(0);
+    scale: 1;
+  }
+}
+
+.appear-left{
+  animation: appear-left linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 35%;
+}
+
+@keyframes appear-right{
+  0%{
+    transform: translateX(50%);
+    scale: 0.5;
+  }
+  100%{
+    transform: translateX(0);
+    scale: 1;
+  }
+}
+
+.appear-right{
+  animation: appear-right linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 35%;
+}
+
+@keyframes slideIn {
+  0%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav{
+  animation: slideIn 0.5s;
+  pointer-events: none;
+}
